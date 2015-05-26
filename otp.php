@@ -3,9 +3,9 @@ namespace PMVC\PlugIn\Auth;
 
 \PMVC\l(__DIR__.'/GoogleAuthenticator/PHPGangsta/GoogleAuthenticator.php');
 
-${_INIT_CONFIG}[_CLASS] = 'PMVC\PlugIn\Auth\TwoStep';
+${_INIT_CONFIG}[_CLASS] = 'PMVC\PlugIn\Auth\OTP';
 
-class TwoStep extends \PMVC\PLUGIN
+class OTP extends \PMVC\PLUGIN
 {
 
     public function init()

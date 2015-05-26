@@ -1,9 +1,9 @@
 {
-    "name": "pmvc-plugin/2-step",
-    "description": "PMVC plugin for Google two step authtication",
+    "name": "pmvc-plugin/otp",
+    "description": "PMVC plugin for Google one time password base on 'PHPGangsta/GoogleAuthenticator'",
     "type": "library",
-    "homepage": "https://github.com/pmvc-plugin/2-step",
-    "keywords": ["fastroute", "routing", "router", "pmvc", "plug", "plug-in"],
+    "homepage": "https://github.com/pmvc-plugin/otp",
+    "keywords": ["otp", "GoogleAuthenticator", "pmvc"],
     "license": "MIT",
     "authors": [
         {

@@ -4,14 +4,13 @@ include_once('vendor/pmvc/pmvc/include_plug.php');
 PMVC\setPlugInFolder('../');
 
 # add route
-$twoStep = PMVC\plug('2-step');
-$secret = $twoStep->getNewSecret('test');
+$secret = PMVC\plug('otp')->getNewSecret('test');
 var_dump($secret);
 
-$one = $twoStep->getOneCode();
+$one = PMVC\plug('otp')->getOneCode();
 var_dump($one);
 
-var_dump($twoStep->validate(array(
+var_dump(PMVC\plug('otp')->validate(array(
    'one'=>$one 
 )));
 
