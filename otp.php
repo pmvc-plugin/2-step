@@ -1,11 +1,11 @@
 <?php
-namespace PMVC\PlugIn\Auth;
+namespace PMVC\PlugIn\otp;
 
 \PMVC\l(__DIR__.'/GoogleAuthenticator/PHPGangsta/GoogleAuthenticator.php');
 
-${_INIT_CONFIG}[_CLASS] = 'PMVC\PlugIn\Auth\OTP';
+${_INIT_CONFIG}[_CLASS] = __NAMESPACE__.'\otp';
 
-class OTP extends \PMVC\PLUGIN
+class otp extends \PMVC\PlugIn
 {
 
     public function init()
@@ -19,23 +19,23 @@ class OTP extends \PMVC\PLUGIN
         $return = new \stdClass();
         $return->secret = $this->createSecret();
         $return->qrcode = $this->getQRCodeGoogleUrl($name,$return->secret);
-        $this->set('secret',$return->secret);
+        $this['secret']=$return->secret;
         return $return;
     }
 
     public function getOneCode($params=array())
     {
         return $this->getCode(
-            $this->get('secret')
+            $this['secret']
         ); 
     }
 
     public function validate($params=array())
     {
-       $this->set($params);
+       \PMVC\set($this, $params);
        return  $this->verifyCode(
-            $this->get('secret'),
-            $this->get('one')
+            $this['secret'],
+            $this['one']
        );
     }
 }
