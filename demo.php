@@ -1,11 +1,11 @@
 <?php
 # plugin
-include_once('vendor/pmvc/pmvc/include_plug.php');
-PMVC\setPlugInFolder('../');
+include_once('vendor/autoload.php');
+PMVC\Load::plug();
+PMVC\addPlugInFolder('../');
 
 # add route
-$secret = PMVC\plug('otp')->getNewSecret('test');
-var_dump($secret);
+var_dump( PMVC\plug('otp')->getNewSecret('test'));
 
 $one = PMVC\plug('otp')->getOneCode();
 var_dump($one);
@@ -14,4 +14,4 @@ var_dump(PMVC\plug('otp')->validate(array(
    'one'=>$one 
 )));
 
-
+//var_dump( PMVC\plug('otp')->getQRCodeGoogleUrl('name','secret'));
