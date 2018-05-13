@@ -1,6 +1,6 @@
 <?php
 PMVC\Load::plug();
-PMVC\addPlugInFolder('../');
+PMVC\Load::plug(null, ['../']);
 class OtpTest extends PHPUnit_Framework_TestCase
 {
     function testPlugin()

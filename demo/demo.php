@@ -1,8 +1,7 @@
 <?php
 # plugin
-include_once('vendor/autoload.php');
-PMVC\Load::plug();
-PMVC\addPlugInFolder('../');
+include_once('../vendor/autoload.php');
+PMVC\Load::plug(null, ['../../']);
 
 # add route
 var_dump( PMVC\plug('otp')->getNewSecret('test'));
